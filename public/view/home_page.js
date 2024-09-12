@@ -14,9 +14,6 @@ export async function homePageView() {
     const divWrapper = document.createElement('div');
     divWrapper.innerHTML = await response.text();
     divWrapper.classList.add('m-4', 'p-4');
-    
-    const form = divWrapper.querySelector('form');
-    form.onsubmit = onSubmitCalcFrom;
 
     root.innerHTML = '';
     root.appendChild(divWrapper);
