@@ -1,6 +1,7 @@
 import {
     getFirestore,
-    collection, addDoc,
+    collection, addDoc, 
+    query, where, orderBy, getDocs, 
 
 } from "https://www.gstatic.com/firebasejs/10.13.1/firebase-firestore.js"
 
@@ -17,7 +18,7 @@ export async function addTicTcToeGameRecord(gameRecord) {
 export async function getAllPlayRecords(email) {
     let history = [];
 
-    const q = query()(
+    const q = query(
         collection(db, TicTacToeGameCollection),
         where('email', '==', email),
         orderBy('timestamp','desc'),
