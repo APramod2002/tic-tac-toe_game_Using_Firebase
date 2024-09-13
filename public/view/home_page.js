@@ -72,7 +72,7 @@ export function updateWindow() {
 
             let winner = game.winner + ' has won.';
             if (game.winner == marking.U) {
-                winner = 'Drwa!';
+                winner = 'Draw!';
             }
             let message = `
                 Game Over! ${winner} <br>
