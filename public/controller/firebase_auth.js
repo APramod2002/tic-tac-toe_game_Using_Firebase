@@ -4,7 +4,7 @@ import {
 } from "https://www.gstatic.com/firebasejs/10.13.1/firebase-auth.js"
 import { app } from "./firebase_core.js";
 import { DEV } from "../model/constant.js";
-import { homePageView } from "../view/home_page.js";
+import { game } from "../view/home_page.js";
 import { signinPageView } from "../view/sigin_page.js";
 import { routing } from "./route_controller.js";
 import { routePathenames } from "./route_controller.js";
@@ -61,6 +61,7 @@ function authStateChangeListener(user) {
         preAuth[i].classList('d-none', 'd-block');
     }
     history.pushState(null, null, routePathenames.HOME);
+    game.reset();
     signinPageView();
     }
 }
