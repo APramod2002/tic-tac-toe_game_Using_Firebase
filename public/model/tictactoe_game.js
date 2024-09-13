@@ -19,19 +19,18 @@ export class TicTacToeGame {
         this.moves = 0;
         this.gameState = GameState.INIT;
         this.winner = null; // O/X/U (draw), null(playing)
-        this.board = [];
         this.errorMessage = null;
         for (let i = 0; i < 9; i++)
             this.board[i] = (marking.U);
     }
 
     play(pos) {
-        this.board[pos] = this.true;
+        this.board[pos] = this.turn;
         this.moves++;
     }
 
     changeTurn() {
-        this.turn = this.turn == marking.X ? marking.O : marking.X;
+        this.turn = this.turn === marking.X ? marking.O : marking.X;
     }
 
     setWinner() {
